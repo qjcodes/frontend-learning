@@ -42,15 +42,16 @@ Enlace de la documentación oficial!
 https://en.bem.info/methodology/quick-start/*/
 
 .tudo {
-  max-width: 1136px;
   display: flex;
   flex-direction: column;
-  margin: auto;
   gap: 32px;
+  align-items: center; /* Alinea los elementos hijos horizontalmente en el centro */
 }
-/*Sección Menu*/
 
+/* Sección Menu */
 section.menu {
+  width: 100%;
+  max-width: 1136px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,6 +91,8 @@ section.title {
 }
 
 .title__div {
+  width: 100%;
+  max-width: 1136px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -138,6 +141,39 @@ section.title {
 /*Sección About*/
 
 section.about {
+  width: 100%;
+  background-color: #eaf2fd;
+  display: flex;
+  padding: 64px 0;
+  justify-content: center;
+  gap: 10px;
+}
+
+.about__container {
+  width: 100%;
+  max-width: 1136px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #464646;
+  display: inline;
+}
+
+.about__paragraph {
+  max-width: 751px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #464646;
+}
+
+.about__container img {
+  width: 140px;
+  height: 52px;
 }
 
 /*Sección Hobbies*/
