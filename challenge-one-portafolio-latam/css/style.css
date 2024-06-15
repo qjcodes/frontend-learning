@@ -304,11 +304,139 @@ li.academic__courses__item__img img {
 /* experiencia*/
 
 section.experience {
+  width: 100%;
+  max-width: 1136px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.experience__section__title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #464646;
+}
+
+.experience__projects {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.experience__box {
+  display: flex;
+  gap: 16px;
+}
+
+.experience__img {
+  width: 100%;
+  max-width: 752px;
+  height: 406px;
+}
+
+.experience__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.experience__box:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.experience__box:nth-child(even) .experience__info {
+  order: 1;
+  text-align: left;
+}
+
+.experience__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #464646;
+}
+
+.experience__text {
+  font-weight: 500;
+  color: #464646;
+}
+
+.experience__description {
+  display: flex;
+  gap: 16px;
+}
+
+.experiencia__botao--repo,
+.experience__botao--demo {
+  padding: 16px;
+  font-weight: 400;
+  border: 1px solid #2a7ae4;
+  gap: 10px;
+}
+
+.experiencia__botao--repo {
+  color: #2a7ae4;
+}
+
+.experience__botao--demo {
+  background-color: #2a7ae4;
+  color: #fff;
 }
 
 /*Contacto*/
 
 section.formcontato {
+  background-color: #eaf2fd;
+  width: 100%;
+  display: flex;
+  padding: 64px 0;
+  justify-content: center;
+  gap: 10px;
+}
+
+.formcontato__contacto {
+  width: 100%;
+  max-width: 1136px;
+  padding-top: 64px;
+  display: flex;
+  gap: 16px;
+}
+
+.formcontato--esquerda {
+  background-color: #EDEDED;
+  width: 464px;
+  height: 593px;
+}
+
+.formcontato__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.formcontato__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formcontato__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #464646;
+}
+
+.formcontato__subtext {
+  font-weight: 500;
+  color: #464646;
+}
+
+.formcontato__form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 /*footeer*/
