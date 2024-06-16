@@ -405,7 +405,7 @@ section.formcontato {
 }
 
 .formcontato--esquerda {
-  background-color: #EDEDED;
+  background-color: #ededed;
   width: 464px;
   height: 593px;
 }
@@ -439,11 +439,76 @@ section.formcontato {
   gap: 32px;
 }
 
+.formcontato__group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formcontato__input,
+.formcontato__textarea {
+  max-width: 100%;
+  padding: 27px 12px 10px 12px;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  border-radius: 4px;
+  outline: none;
+}
+
+.formcontato__textarea {
+  min-height: 95px;
+  resize: none;
+}
+
+.formcontato__label {
+  background-color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #a2a2a2;
+  transition: 0.2s ease-in-out all;
+  pointer-events: none;
+}
+
+.formcontato__input:focus + .formcontato__label,
+.formcontato__input:not(:placeholder-shown) + .formcontato__label,
+.formcontato__textarea:focus + .formcontato__label,
+.formcontato__textarea:not(:placeholder-shown) + .formcontato__label {
+  top: 10px;
+  font-size: 12px;
+}
+
+.formcontato__input:focus + .formcontato__label,
+.formcontato__textarea:focus + .formcontato__label {
+  color: #0056b3;
+}
+
+.formcontato__botao {
+  background-color: #2A7AE4;
+  width: max-content;
+  font-weight: 400;
+  padding: 16px;
+  color: #FFF;
+}
+
 /*footeer*/
 
 section.footer {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.footer__rodape p{
+  font-weight: 500;
+  color: #464646;
+  text-align: center;
+}
 /* Vamos a desafiarnos trabajando con responsividad?
 Utiliza las referencias de los breakpoints @media abajo */
 
