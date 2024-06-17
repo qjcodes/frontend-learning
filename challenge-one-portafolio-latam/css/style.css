@@ -11,6 +11,10 @@ coloque nas sessões indicadas*/
   --cor-de-link: #000;
 }
 
+* {
+  transition: 0.5s ease-in-out all;
+}
+
 body {
   box-sizing: border-box;
   background-color: var(--cor-de-fundo);
@@ -42,6 +46,7 @@ Enlace de la documentación oficial!
 https://en.bem.info/methodology/quick-start/*/
 
 .tudo {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -71,24 +76,47 @@ header.menu__header img {
 
 h3.menu__title {
   font-weight: 700;
+  color: #464646;
 }
 
 ul.menu__list {
   display: flex;
   gap: 32px;
+  transition: 0.2s ease-in-out all;
 }
 
 li.menu__list__item a {
   font-weight: 500;
+  color: #464646;
 }
 
-li.menu__list__item:nth-child(6) a {
+li.menu__list__item a:hover {
+  font-weight: 600;
+  color: #2a7ae4;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #2a7ae4;
+  transition: 0.01s ease-out all;
+}
+
+li.menu__list__item:nth-child(6) a,
+li.menu__list__item__contato a {
   font-weight: 700;
+  color: #464646;
+}
+
+li.menu__list__item:nth-child(6) a:hover,
+li.menu__list__item__contato a:hover {
+  color: #000;
+  border: none;
+}
+
+li.menu__list__item__contato {
+  display: none;
+  transition: 0.2s ease-in-out all;
 }
 
 /*Sección Title*/
 section.title {
-  margin-top: 88px;
 }
 
 .title__div {
@@ -98,11 +126,16 @@ section.title {
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  transition: 0.2s ease-in-out all;
 }
 
 .title__profile {
   width: 368px;
   height: 368px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 4px solid #fff;
+  filter: grayscale(20%);
 }
 
 .title__container {
@@ -125,18 +158,22 @@ section.title {
 
 .title__network {
   display: flex;
+  flex-wrap: wrap;
   gap: 32px;
 }
 
 .title__network__item {
+  max-width: 100px;
+  min-width: 95px;
   display: flex;
+  flex: 1 100px;
   align-items: center;
   gap: 4px;
 }
 
-.title__network__item img {
-  width: 16px;
-  height: 16px;
+.title__network__item i {
+  transform: rotate(-45deg);
+  color: #464646;
 }
 
 /*Sección About*/
@@ -173,8 +210,10 @@ section.about {
 }
 
 .about__container img {
+  display: none;
   width: 140px;
   height: 52px;
+  min-width: 20%;
 }
 
 /* INFO */
@@ -209,19 +248,26 @@ section.hobbies {
 .hobbies__line {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
 .skills__box,
 .hobbies__box {
-  width: 100%;
-  height: 174px;
-  max-width: 176px;
+  height: 142px;
   background-color: #ffffff;
   display: flex;
+  flex: 1 144px;
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px;
+  gap: 8px;
+}
+
+.skills__box ul,
+.hobbies__box ul {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -233,10 +279,28 @@ section.hobbies {
   align-content: center;
 }
 
+.skills__img i,
+.hobbies__img i {
+  color: #2a7ae4;
+}
+
 .skills__name,
 .hobbies__name {
   font-size: 16px;
   font-weight: 700;
+  color: #464646;
+}
+
+.skills__box:hover,
+.hobbies__box:hover {
+  background-color: #2a7ae4;
+}
+
+.skills__box:hover .skills__img i,
+.hobbies__box:hover .hobbies__img i,
+.skills__box:hover .skills__name,
+.hobbies__box:hover .hobbies__name {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Experiencia Académica*/
@@ -262,13 +326,20 @@ section.academic {
   width: 100%;
   max-width: 1136px;
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
 .academic__courses__box {
-  width: 368px;
-  height: 347px;
+  min-height: 169px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 275px;
 }
+/* 
+.academic__courses__box:hover {
+  background-color: rgba(42, 123, 229, 0.2);
+} */
 
 ul.academic__courses__list {
   display: flex;
@@ -277,6 +348,7 @@ ul.academic__courses__list {
 }
 
 li.academic__courses__item__img {
+  box-sizing: border-box;
   background-color: #ffffff;
   height: 286px;
   display: flex;
@@ -288,7 +360,10 @@ li.academic__courses__item__img {
 
 li.academic__courses__item__img img {
   width: auto;
-  height: 130px;
+  height: auto;
+  max-width: 368px;
+  max-height: 130px;
+  min-width: 20%;
 }
 
 .academic__courses__item__title h4 {
@@ -325,18 +400,23 @@ section.experience {
 }
 
 .experience__box {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   gap: 16px;
 }
 
 .experience__img {
-  width: 100%;
+  min-width: 20%;
   max-width: 752px;
-  height: 406px;
+  max-height: 406px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .experience__info {
-  width: 100%;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -450,10 +530,11 @@ section.formcontato {
 .formcontato__textarea {
   max-width: 100%;
   padding: 27px 12px 10px 12px;
-  border: none;
+  color: #464646;
   border-bottom: 1px solid #c8c8c8;
   border-radius: 4px;
   outline: none;
+  transition: 0.1s ease-in-out all;
 }
 
 .formcontato__textarea {
@@ -481,17 +562,32 @@ section.formcontato {
   font-size: 12px;
 }
 
+.formcontato__input:focus,
+.formcontato__textarea:focus {
+  border-bottom: 2px solid #2a7ae4;
+}
+
 .formcontato__input:focus + .formcontato__label,
 .formcontato__textarea:focus + .formcontato__label {
   color: #0056b3;
 }
 
 .formcontato__botao {
-  background-color: #2A7AE4;
+  background-color: #2a7ae4;
   width: max-content;
   font-weight: 400;
   padding: 16px;
-  color: #FFF;
+  color: #fff;
+}
+
+.error {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  color: rgba(255, 0, 0, 0.8);
+  font-size: 15px;
 }
 
 /*footeer*/
@@ -504,7 +600,7 @@ section.footer {
   align-items: center;
 }
 
-.footer__rodape p{
+.footer__rodape p {
   font-weight: 500;
   color: #464646;
   text-align: center;
@@ -513,37 +609,292 @@ section.footer {
 Utiliza las referencias de los breakpoints @media abajo */
 
 /*Tablet*/
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .tudo {
+    box-sizing: border-box;
+    gap: 0;
+  }
   /* Menú */
+  section.menu {
+    box-sizing: border-box;
+    padding: 16px 32px;
+  }
+
+  ul.menu__list {
+    display: none;
+  }
+
+  li.menu__list__item__contato {
+    display: flex;
+  }
 
   /*title*/
+  .title__div {
+    gap: 32px;
+    box-sizing: border-box;
+    padding: 32px;
+  }
+
+  .title__profile {
+    width: 146px;
+    height: 146px;
+  }
+
+  .title__container {
+    gap: 8px;
+  }
+
+  .title__bio {
+    font-size: 22px;
+  }
+
+  .title__subsection {
+    font-size: 16px;
+  }
+
+  /* About */
+  section.about {
+    box-sizing: border-box;
+    padding: 32px;
+  }
+  .about__title {
+    font-size: 22px;
+  }
+
+  .about__paragraph {
+    font-size: 14px;
+  }
+
+  .title__network__item a {
+    color: #464646;
+  }
 
   /*Skills*/
 
   /*Hobbies*/
+  section.skills,
+  section.hobbies {
+    box-sizing: border-box;
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .skills__title,
+  .hobbies__title {
+    font-size: 22px;
+  }
+
+  .skills__box,
+  .hobbies__box {
+    max-height: 86px;
+    flex: 1 124px;
+  }
+
+  .skills__img,
+  .hobbies__img {
+    width: auto;
+    height: 37px;
+    display: inline-block;
+    align-content: center;
+  }
+
+  .skills__name,
+  .hobbies__name {
+    font-size: 16px;
+    font-weight: 700;
+  }
 
   /*Formación Académica*/
 
+  section.academic {
+    box-sizing: border-box;
+    padding: 32px;
+  }
+
+  .academic__title {
+    font-size: 22px;
+  }
+
+  .academic__courses {
+  }
+
+  .academic__courses__box {
+    width: auto;
+    min-width: 180px;
+    flex: 1 180px;
+  }
+
+  li.academic__courses__item__img {
+    width: 100%;
+    height: 118px;
+  }
+
+  li.academic__courses__item__img img {
+    max-width: 84px;
+    max-height: 58px;
+  }
+
+  .academic__courses__item__title h4 {
+    font-size: 16px;
+  }
+
+  .academic__courses__item__subtitle p {
+    font-size: 14px;
+  }
+
   /*Experiencia Profesional*/
+  section.experience {
+    box-sizing: border-box;
+    padding: 32px;
+  }
+
+  .experience__section__title {
+    font-size: 22px;
+  }
+
+  .experience__box {
+    flex-direction: column;
+  }
+
+  .experience__img {
+    max-height: 320px;
+  }
+
+  .experience__box:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .experience__title {
+    font-size: 16px;
+  }
+
+  .experience__text {
+    font-size: 14px;
+  }
+
+  .experience__description {
+    display: flex;
+    gap: 16px;
+  }
+
+  .experiencia__botao--repo,
+  .experience__botao--demo {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  /*Contacto*/
+  section.formcontato {
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 32px;
+  }
+
+  .formcontato__contacto {
+    padding-top: 0;
+    flex-direction: column;
+  }
+
+  .formcontato--esquerda {
+    display: none;
+  }
+
+  .formcontato__title {
+    font-size: 22px;
+  }
+
+  .formcontato__botao {
+    font-weight: 400;
+    padding: 12px 16px;
+  }
 }
 
 /*Mobile*/
-@media (min-width: 425px) {
-  /*Menu*/
+@media (max-width: 425px) {
+  .tudo {
+    box-sizing: border-box;
+  }
+  /* Menú */
+  section.menu {
+    padding: 16px;
+  }
 
-  /*Titulo*/
+  li.menu__list__item__contato {
+    display: flex;
+  }
 
-  /*Sección sobre mi*/
+  li.menu__list__item__contato a {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  /*title*/
+  .title__div {
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .title__profile {
+    width: 98px;
+    height: 98px;
+    align-self: flex-start;
+  }
+
+  .title__container {
+    gap: 16px;
+  }
+
+  .title__subsection {
+    font-size: 14px;
+  }
+
+  .title__network {
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .title__network__item {
+    max-width: 83px;
+    min-width: 82px;
+    flex: 1 70px;
+  }
+
+  .title__network__item a {
+    font-size: 14px;
+    font-weight: 700;
+    gap: 8;
+  }
+
+  .title__network__item i {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* About */
+  section.about {
+    box-sizing: border-box;
+    padding: 16px;
+  }
 
   /*Skills*/
 
   /*Hobbies*/
-
+  section.skills,
+  section.hobbies {
+    padding: 16px;
+  }
   /*Formación Académica*/
 
   /*Experiencia Profesional*/
+  section.experience {
+    gap: 16px;
+  }
+
+  .experience__img {
+    max-height: 144px;
+  }
 
   /*Contacto*/
-
-  /*Footer*/
 }
