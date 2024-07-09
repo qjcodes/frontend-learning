@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "name": "Laptop Dell XPS 13",
+      "price": "1200.00",
+      "image": "https://m.media-amazon.com/images/I/61A2enbP-0L.jpg",
+      "id": "c52c"
+    },
+    {
+      "name": "LG UltraFine 4K Monitor",
+      "price": "300.00",
+      "image": "https://m.media-amazon.com/images/I/61pZqAIeNXL.jpg",
+      "id": "c182"
+    },
+    {
+      "name": "Logitech MX Master 3 Mouse",
+      "price": "100.00",
+      "image": "https://m.media-amazon.com/images/I/71zp7CMBb0L.jpg",
+      "id": "c184"
+    },
+    {
+      "name": "Corsair K95 RGB Platinum Keyboard",
+      "price": "100.00",
+      "image": "https://i.pcmag.com/imagery/reviews/07vjkhMyPEwY0l5cKyGvdqa-13.fit_scale.size_760x427.v1579215814.jpg",
+      "id": "c185"
+    },
+    {
+      "name": "HP LaserJet Pro M404n Printer",
+      "price": "150.00",
+      "image": "https://m.media-amazon.com/images/I/31obloHab1L.jpg",
+      "id": "c186"
+    },
+    {
+      "name": "Seagate Backup Plus 4TB External Hard Drive",
+      "price": "80.00",
+      "image": "https://snpi.dell.com/snp/images/products/large/en-us~1ba0c7ed-385d-459f-998e-a31dc7f3e476/1ba0c7ed-385d-459f-998e-a31dc7f3e476.jpg",
+      "id": "c190"
+    },
+    {
+      "name": "Samsung T7 1TB External SSD",
+      "price": "150.00",
+      "image": "https://m.media-amazon.com/images/S/aplus-media/vc/35f90258-ae0d-4269-905e-50fde33a0f11.__CR0,0,800,600_PT0_SX800_V1___.jpg",
+      "id": "c54c"
+    },
+    {
+      "name": "Logitech C920s HD Pro Webcam",
+      "price": "70.00",
+      "image": "https://m.media-amazon.com/images/I/31ZeSQblDLL.jpg",
+      "id": "c170"
+    },
+    {
+      "id": "a37d",
+      "name": "Developer",
+      "price": "200.00",
+      "image": "https://media.istockphoto.com/id/2155055816/photo/it-developers-discussing-intelligent-website-with-laptop-showing-data-infobahn.webp?b=1&s=170667a&w=0&k=20&c=dMZ5nWYRzsewo2BzfPNUsv5aWyUoxw1fAnsItkgnpCU="
+    }
+  ]
+}
